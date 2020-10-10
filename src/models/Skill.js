@@ -12,6 +12,14 @@ const Skill = sequelize.define("Skill", {
         defaultValue: "",
         allowNull: false,
     },
+    description: {
+        type: DataTypes.STRING,
+        defaultValue: "",
+    },
+    imageURL: {
+        type: DataTypes.STRING,
+        defaultValue: "",
+    }
 }, { freezeTableName: true });
 
 module.exports = Skill;
