@@ -32,6 +32,11 @@ const User = sequelize.define("User", {
         allowNull: false,
         defaultValue: false,
     },
+    isAdmin: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+    }
 }, { freezeTableName: true });
 
 module.exports = User;
