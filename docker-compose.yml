@@ -1,0 +1,27 @@
+ersion: "3.4"
+services:
+  web-api:
+    build: .
+    ports:
+      - 5000:5000
+    build: .
+    depends_on: 
+      - db
+    command: > 
+      sh -c "npm run start"
+
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: makespp-db
+    ports:
+      - 5432:5432
+
+volumes:
+  db-data:
+    driver: local
